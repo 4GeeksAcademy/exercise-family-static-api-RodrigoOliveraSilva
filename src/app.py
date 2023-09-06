@@ -55,7 +55,7 @@ def Crear_Miembro():
         
 
 @app.route("/member/<int:id>",methods = ["GET"])
-def BuscarMiembroEspesifico(id):
+def Buscar_Miembro_Espesifico(id):
     try:
         member = jackson_family.get_member(id)
         if member == None:
@@ -72,7 +72,7 @@ def BuscarMiembroEspesifico(id):
         return jsonify({"error":TypeError}),500
     
 @app.route("/member/<int:id>",methods = ["DELETE"])
-def BorrarMiembro(id):
+def Borrar_Miembro(id):
     try:
         memberDElETE = jackson_family.delete_member(id)
         if memberDElETE == False:
